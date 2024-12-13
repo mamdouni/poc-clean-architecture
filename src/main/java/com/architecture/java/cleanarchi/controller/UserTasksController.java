@@ -1,20 +1,18 @@
 package com.architecture.java.cleanarchi.controller;
 
 import com.architecture.java.cleanarchi.controller.dtos.TaskDTO;
-import com.architecture.java.cleanarchi.controller.dtos.UserDTO;
 import com.architecture.java.cleanarchi.controller.mappers.TaskMapper;
 import com.architecture.java.cleanarchi.controller.mappers.UserMapper;
+import com.architecture.java.cleanarchi.entities.UserEntity;
 import com.architecture.java.cleanarchi.exceptions.ExceptionsMessagesEnum;
 import com.architecture.java.cleanarchi.exceptions.ResourceNotFoundException;
-import com.architecture.java.cleanarchi.services.TaskService;
 import com.architecture.java.cleanarchi.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @AllArgsConstructor
@@ -22,7 +20,6 @@ import static org.springframework.http.HttpStatus.OK;
 public class UserTasksController {
 
     private final UserService userService;
-    private final TaskService taskService;
     private final UserMapper userMapper;
     private final TaskMapper taskMapper;
 
@@ -38,25 +35,35 @@ public class UserTasksController {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public TaskDTO createTask(@PathVariable Long userId, @RequestBody TaskDTO taskDTO) {
+    public TaskDTO createTask(@PathVariable Integer userId, @RequestBody TaskDTO taskDTO) {
 
-        var user = userService.findById(userId.intValue())
+        return userService.createTask(userId, taskMapper.toEntity(taskDTO))
+                .map(taskMapper::toDTO)
                 .orElseThrow(() -> new ResourceNotFoundException(ExceptionsMessagesEnum.NOT_FOUND_USER));
-        user.addTask(taskMapper.toEntity(taskDTO));
-        user = userService.save(user);
-        return user.getTasks().stream()
-                .filter(task -> task.getTitle().equals(taskDTO.title()))
+    }
+
+    @GetMapping("/{taskId}")
+    @ResponseStatus(OK)
+    public TaskDTO getUserTask( @PathVariable Long userId, @PathVariable Integer taskId) {
+
+        return getUserEntity(userId)
+                .getTasks()
+                .stream()
+                .filter(task -> task.getId().equals(taskId))
                 .findFirst()
                 .map(taskMapper::toDTO)
                 .orElseThrow(() -> new ResourceNotFoundException(ExceptionsMessagesEnum.NOT_FOUND_TASK));
     }
 
-    @GetMapping("/{id}")
-    @ResponseStatus(OK)
-    public TaskDTO getUserTask(@PathVariable Long id, @PathVariable Long userId) {
+    private UserEntity getUserEntity(Long userId) {
+        return userService.findById(userId.intValue())
+                .orElseThrow(() -> new ResourceNotFoundException(ExceptionsMessagesEnum.NOT_FOUND_USER));
+    }
 
-        return taskService.findById(id.intValue())
-                .map(taskMapper::toDTO)
-                .orElseThrow(() -> new ResourceNotFoundException(ExceptionsMessagesEnum.NOT_FOUND_TASK));
+    @DeleteMapping("/{taskId}")
+    @ResponseStatus(NO_CONTENT)
+    public void removeTask(@PathVariable Integer userId, @PathVariable Integer taskId) {
+
+        userService.removeTask(userId, taskId);
     }
 }
