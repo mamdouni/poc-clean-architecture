@@ -1,4 +1,4 @@
-# POC Clean Architecture
+# POC Hexagonal Architecture
 
 After starting the server, you can check if the api is running by accessing the following url :
 - http://localhost:8080/actuator/health
