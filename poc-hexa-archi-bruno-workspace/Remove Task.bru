@@ -1,0 +1,18 @@
+meta {
+  name: Remove Task
+  type: http
+  seq: 1
+}
+
+delete {
+  url: {{url}}/users/1/tasks/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "username": "nicolas.lhote@example.com",
+      "email": "nicolas.lhote@example.com"
+  }
+}

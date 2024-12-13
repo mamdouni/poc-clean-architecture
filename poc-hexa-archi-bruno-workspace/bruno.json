@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "poc-hexa-archi-bruno-workspace",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

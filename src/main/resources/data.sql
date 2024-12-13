@@ -1,8 +1,8 @@
-INSERT INTO users (username, email, password) VALUES
-                                                  ('john_doe', 'john.doe@example.com', 'password123'),
-                                                  ('jane_smith', 'jane.smith@example.com', 'password456'),
-                                                  ('alice_jones', 'alice.jones@example.com', 'password789'),
-                                                  ('bob_brown', 'bob.brown@example.com', 'password101112');
+INSERT INTO users (username, email) VALUES
+                                                  ('john_doe', 'john.doe@example.com'),
+                                                  ('jane_smith', 'jane.smith@example.com'),
+                                                  ('alice_jones', 'alice.jones@example.com'),
+                                                  ('bob_brown', 'bob.brown@example.com');
 
 INSERT INTO tasks (user_id, title, description, due_date, status) VALUES
                                                                       (1, 'Task 1', 'Description for Task 1', '2023-12-01', 'Pending'),

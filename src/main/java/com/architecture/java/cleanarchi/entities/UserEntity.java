@@ -1,6 +1,5 @@
 package com.architecture.java.cleanarchi.entities;
 
-import com.architecture.java.cleanarchi.controller.dtos.TaskDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,13 +20,16 @@ public class UserEntity {
 
     private String email;
 
-    private String password;
-
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<TaskEntity> tasks;
 
     public void addTask(TaskEntity taskEntity) {
         this.tasks.add(taskEntity);
         taskEntity.setUser(this);
+    }
+
+    public void removeTask(TaskEntity taskEntity) {
+        this.tasks.remove(taskEntity);
+        taskEntity.setUser(null);
     }
 }
