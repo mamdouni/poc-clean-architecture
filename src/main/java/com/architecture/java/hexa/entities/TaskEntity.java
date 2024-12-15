@@ -1,4 +1,4 @@
-package com.architecture.java.cleanarchi.entities;
+package com.architecture.java.hexa.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

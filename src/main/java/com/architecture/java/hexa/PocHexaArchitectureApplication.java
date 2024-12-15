@@ -1,13 +1,13 @@
-package com.architecture.java.cleanarchi;
+package com.architecture.java.hexa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PocCleanArchitectureApplication {
+public class PocHexaArchitectureApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PocCleanArchitectureApplication.class, args);
+		SpringApplication.run(PocHexaArchitectureApplication.class, args);
 	}
 
 }

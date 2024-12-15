@@ -1,4 +1,4 @@
-package com.architecture.java.cleanarchi.controller.dtos;
+package com.architecture.java.hexa.controller.dtos;
 
 import java.util.List;
 

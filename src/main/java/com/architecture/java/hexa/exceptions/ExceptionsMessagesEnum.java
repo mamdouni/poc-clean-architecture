@@ -1,4 +1,4 @@
-package com.architecture.java.cleanarchi.exceptions;
+package com.architecture.java.hexa.exceptions;
 
 import lombok.Getter;
 

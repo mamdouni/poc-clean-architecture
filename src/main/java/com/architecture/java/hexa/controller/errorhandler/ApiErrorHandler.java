@@ -1,6 +1,6 @@
-package com.architecture.java.cleanarchi.controller.errorhandler;
+package com.architecture.java.hexa.controller.errorhandler;
 
-import com.architecture.java.cleanarchi.exceptions.ResourceNotFoundException;
+import com.architecture.java.hexa.exceptions.ResourceNotFoundException;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;

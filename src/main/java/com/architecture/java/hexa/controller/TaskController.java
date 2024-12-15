@@ -1,6 +1,6 @@
-package com.architecture.java.cleanarchi.controller;
+package com.architecture.java.hexa.controller;
 
-import com.architecture.java.cleanarchi.services.TaskService;
+import com.architecture.java.hexa.services.TaskService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
