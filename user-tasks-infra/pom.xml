@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.architecture.java</groupId>
-        <artifactId>poc-clean-architecture</artifactId>
+        <artifactId>poc-hexa-architecture</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
