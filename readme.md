@@ -46,5 +46,12 @@ You can also use this bruno exported collection to test the API :
 You have also to create and configure this **LOCAL** environment variables in Bruno :
 - ![bruno-local-env.png](images/bruno-local-env.png)
 
+## Architecture
 
+here's a global overview of the project architecture :
 
+![clean-architecture-global.png](images/clean-architecture-global.png)
+
+and a more detailed view of the architecture and the role of each layer :
+
+![clean-architecture.drawio.png](images/clean-architecture.drawio.png)
