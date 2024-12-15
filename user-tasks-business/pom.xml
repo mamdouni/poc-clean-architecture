@@ -11,6 +11,7 @@
 
     <artifactId>user-tasks-business</artifactId>
 
+    <!-- TODO Only basic cdi annotations are permitted here, like @Service or @Component -->
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>

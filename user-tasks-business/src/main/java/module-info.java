@@ -1,3 +1,4 @@
+// TODO this will limit the access to the business module to only the modules that are listed in the requires clause.
 module com.architecture.java.business {
 
     exports com.architecture.java.business.application.user.ports.inputs;

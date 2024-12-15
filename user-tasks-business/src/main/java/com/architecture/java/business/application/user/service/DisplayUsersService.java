@@ -15,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 public class DisplayUsersService implements DisplayUsersUseCases {
 
+    // TODO you can use a service to handle more than one use case.
     private final ValidateExistenceAndGetUserRule validateExistenceAndGetUserRule;
     private final ValidateExistenceAndGetUserTaskRule validateExistenceAndGetUserTaskRule;
     private final UserPersistencePort userPersistencePort;

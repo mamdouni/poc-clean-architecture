@@ -13,6 +13,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class CreateUserService implements CreateUserUseCase {
 
+    // TODO only the service can call the domain, the domain can't call the service
     private final ValidateUserCreationRule validateUserCreationRule;
     private final UserPersistencePort userPersistencePort;
 

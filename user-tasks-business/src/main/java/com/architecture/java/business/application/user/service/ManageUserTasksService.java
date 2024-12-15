@@ -31,9 +31,12 @@ public class ManageUserTasksService implements ManageUserTasksUseCase {
     @Override
     public Optional<Task> createTask(Integer userId, Task task) {
 
+        // TODO you can chain the rules like here
         if(validateTaskTitleEmptinessRule
                 .or(validateTaskUniquenessRule.negate())
                 .test(task)) {
+
+            // TODO the use case can handle some business rules also
             throw new BadRequestException(NOT_VAlID_TASK);
         }
 
