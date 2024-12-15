@@ -1,7 +1,7 @@
 package com.architecture.java.infra.primary.rest.user.controllers;
 
-import com.architecture.java.business.application.user.ports.input.DisplayUsersUseCases;
-import com.architecture.java.business.application.user.ports.input.ManageUserTasksUseCase;
+import com.architecture.java.business.application.user.ports.inputs.DisplayUsersUseCases;
+import com.architecture.java.business.application.user.ports.inputs.ManageUserTasksUseCase;
 import com.architecture.java.infra.primary.rest.user.dtos.TaskDTO;
 import com.architecture.java.infra.primary.rest.user.mappers.TaskRestMapper;
 import lombok.AllArgsConstructor;

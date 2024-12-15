@@ -1,7 +1,7 @@
 package com.architecture.java.infra.secondary.database.user.adapters;
 
 import com.architecture.java.business.domain.user.models.Task;
-import com.architecture.java.business.domain.user.ports.output.TaskPersistencePort;
+import com.architecture.java.business.domain.user.ports.outputs.TaskPersistencePort;
 import com.architecture.java.infra.secondary.database.user.mappers.TaskEntityMapper;
 import com.architecture.java.infra.secondary.database.user.repositories.TaskRepository;
 import lombok.AllArgsConstructor;

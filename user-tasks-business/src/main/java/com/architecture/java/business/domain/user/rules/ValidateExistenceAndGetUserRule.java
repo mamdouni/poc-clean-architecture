@@ -3,7 +3,7 @@ package com.architecture.java.business.domain.user.rules;
 import com.architecture.java.business.domain.TransformerBusinessRule;
 import com.architecture.java.business.domain.exceptions.ResourceNotFoundException;
 import com.architecture.java.business.domain.user.models.User;
-import com.architecture.java.business.domain.user.ports.output.UserPersistencePort;
+import com.architecture.java.business.domain.user.ports.outputs.UserPersistencePort;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

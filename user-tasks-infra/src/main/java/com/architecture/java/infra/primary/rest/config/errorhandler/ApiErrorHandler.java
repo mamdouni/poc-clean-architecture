@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.io.Serializable;
 
@@ -18,7 +17,7 @@ import java.io.Serializable;
 public class ApiErrorHandler {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler({ResourceNotFoundException.class, NoResourceFoundException.class})
+    @ExceptionHandler({ResourceNotFoundException.class})
     public ErrorResponse handleNotFoundResource(@NonNull ResourceNotFoundException ex) {
 
         return buildError(HttpStatus.NOT_FOUND.getReasonPhrase(), ex.getMessage());

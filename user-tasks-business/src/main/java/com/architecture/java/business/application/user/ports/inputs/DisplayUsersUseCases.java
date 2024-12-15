@@ -1,4 +1,4 @@
-package com.architecture.java.business.application.user.ports.input;
+package com.architecture.java.business.application.user.ports.inputs;
 
 import com.architecture.java.business.domain.user.models.Task;
 import com.architecture.java.business.domain.user.models.User;

@@ -1,4 +1,4 @@
-package com.architecture.java.business.application.user.ports.input;
+package com.architecture.java.business.application.user.ports.inputs;
 
 public interface RemoveUserUseCase {
 

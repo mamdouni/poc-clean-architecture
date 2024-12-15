@@ -1,8 +1,8 @@
 package com.architecture.java.business.application.user.service;
 
-import com.architecture.java.business.application.user.ports.input.CreateUserUseCase;
+import com.architecture.java.business.application.user.ports.inputs.CreateUserUseCase;
 import com.architecture.java.business.domain.user.models.User;
-import com.architecture.java.business.domain.user.ports.output.UserPersistencePort;
+import com.architecture.java.business.domain.user.ports.outputs.UserPersistencePort;
 import com.architecture.java.business.domain.user.rules.ValidateUserCreationRule;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

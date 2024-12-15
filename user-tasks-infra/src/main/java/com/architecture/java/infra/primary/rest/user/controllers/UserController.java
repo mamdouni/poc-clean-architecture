@@ -1,8 +1,8 @@
 package com.architecture.java.infra.primary.rest.user.controllers;
 
-import com.architecture.java.business.application.user.ports.input.CreateUserUseCase;
-import com.architecture.java.business.application.user.ports.input.DisplayUsersUseCases;
-import com.architecture.java.business.application.user.ports.input.RemoveUserUseCase;
+import com.architecture.java.business.application.user.ports.inputs.CreateUserUseCase;
+import com.architecture.java.business.application.user.ports.inputs.DisplayUsersUseCases;
+import com.architecture.java.business.application.user.ports.inputs.RemoveUserUseCase;
 import com.architecture.java.infra.primary.rest.user.dtos.UserDTO;
 import com.architecture.java.infra.primary.rest.user.mappers.UserRestMapper;
 import lombok.AllArgsConstructor;

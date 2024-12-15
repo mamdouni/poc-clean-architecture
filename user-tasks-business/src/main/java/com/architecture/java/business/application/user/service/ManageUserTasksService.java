@@ -1,12 +1,12 @@
 package com.architecture.java.business.application.user.service;
 
-import com.architecture.java.business.application.user.ports.input.ManageUserTasksUseCase;
+import com.architecture.java.business.application.user.ports.inputs.ManageUserTasksUseCase;
 import com.architecture.java.business.domain.exceptions.BadRequestException;
 import com.architecture.java.business.domain.exceptions.ResourceNotFoundException;
 import com.architecture.java.business.domain.user.models.Task;
 import com.architecture.java.business.domain.user.models.User;
-import com.architecture.java.business.domain.user.ports.output.TaskPersistencePort;
-import com.architecture.java.business.domain.user.ports.output.UserPersistencePort;
+import com.architecture.java.business.domain.user.ports.outputs.TaskPersistencePort;
+import com.architecture.java.business.domain.user.ports.outputs.UserPersistencePort;
 import com.architecture.java.business.domain.user.rules.ValidateExistenceAndGetUserRule;
 import com.architecture.java.business.domain.user.rules.ValidateTaskTitleEmptinessRule;
 import com.architecture.java.business.domain.user.rules.ValidateTaskUniquenessRule;

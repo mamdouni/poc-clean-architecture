@@ -1,4 +1,4 @@
-package com.architecture.java.business.domain.user.ports.output;
+package com.architecture.java.business.domain.user.ports.outputs;
 
 import com.architecture.java.business.domain.user.models.User;
 

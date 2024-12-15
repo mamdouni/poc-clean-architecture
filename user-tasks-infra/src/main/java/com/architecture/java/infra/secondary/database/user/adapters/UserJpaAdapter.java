@@ -1,7 +1,7 @@
 package com.architecture.java.infra.secondary.database.user.adapters;
 
 import com.architecture.java.business.domain.user.models.User;
-import com.architecture.java.business.domain.user.ports.output.UserPersistencePort;
+import com.architecture.java.business.domain.user.ports.outputs.UserPersistencePort;
 import com.architecture.java.infra.secondary.database.user.mappers.TaskEntityMapper;
 import com.architecture.java.infra.secondary.database.user.mappers.UserEntityMapper;
 import com.architecture.java.infra.secondary.database.user.repositories.UserRepository;
