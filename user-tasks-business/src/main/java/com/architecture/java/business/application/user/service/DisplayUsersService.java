@@ -5,6 +5,7 @@ import com.architecture.java.business.domain.user.models.Task;
 import com.architecture.java.business.domain.user.models.User;
 import com.architecture.java.business.domain.user.ports.output.UserPersistencePort;
 import com.architecture.java.business.domain.user.rules.ValidateExistenceAndGetUserRule;
+import com.architecture.java.business.domain.user.rules.ValidateExistenceAndGetUserTaskRule;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class DisplayUsersService implements DisplayUsersUseCases {
 
     private final ValidateExistenceAndGetUserRule validateExistenceAndGetUserRule;
+    private final ValidateExistenceAndGetUserTaskRule validateExistenceAndGetUserTaskRule;
     private final UserPersistencePort userPersistencePort;
 
     @Override
@@ -24,21 +26,27 @@ public class DisplayUsersService implements DisplayUsersUseCases {
     }
 
     @Override
-    public User findById(Integer id) {
+    public User findById(Integer userId) {
 
+        return getUser(userId);
+    }
+
+    private User getUser(Integer userId) {
         return validateExistenceAndGetUserRule
-                .apply(new User().setId(id));
+                .apply(new User().setId(userId));
     }
 
     @Override
     public List<Task> getUserTasks(Integer userId) {
 
-        return List.of();
+        return getUser(userId)
+                .getTasks();
     }
 
     @Override
     public Task getUserTask(Integer userId, Integer taskId) {
 
-        return null;
+        return validateExistenceAndGetUserTaskRule
+                .apply(new User().setId(userId), new Task().setId(taskId));
     }
 }

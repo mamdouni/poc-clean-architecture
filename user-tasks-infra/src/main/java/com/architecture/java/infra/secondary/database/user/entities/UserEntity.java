@@ -3,6 +3,7 @@ package com.architecture.java.infra.secondary.database.user.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.Set;
 
@@ -23,13 +24,10 @@ public class UserEntity {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<TaskEntity> tasks;
 
-    public void addTask(TaskEntity taskEntity) {
-        this.tasks.add(taskEntity);
-        taskEntity.setUser(this);
-    }
-
-    public void removeTask(TaskEntity taskEntity) {
-        this.tasks.remove(taskEntity);
-        taskEntity.setUser(null);
+    public void setTasks(Set<TaskEntity> tasks) {
+        if(CollectionUtils.isNotEmpty(tasks)) {
+            tasks.forEach(task -> task.setUser(this));
+        }
+        this.tasks = tasks;
     }
 }

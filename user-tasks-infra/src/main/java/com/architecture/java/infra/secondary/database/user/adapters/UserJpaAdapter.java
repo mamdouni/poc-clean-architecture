@@ -2,27 +2,31 @@ package com.architecture.java.infra.secondary.database.user.adapters;
 
 import com.architecture.java.business.domain.user.models.User;
 import com.architecture.java.business.domain.user.ports.output.UserPersistencePort;
+import com.architecture.java.infra.secondary.database.user.mappers.TaskEntityMapper;
 import com.architecture.java.infra.secondary.database.user.mappers.UserEntityMapper;
 import com.architecture.java.infra.secondary.database.user.repositories.UserRepository;
 import lombok.AllArgsConstructor;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
 public class UserJpaAdapter implements UserPersistencePort {
 
     private final UserRepository repository;
-    private final UserEntityMapper mapper;
+    private final UserEntityMapper userMapper;
+    private final TaskEntityMapper taskEntityMapper;
 
     @Override
     public List<User> findAll() {
 
         return repository.findAll()
                 .stream()
-                .map(mapper::toDomain)
+                .map(userMapper::toDomain)
                 .toList();
     }
 
@@ -30,34 +34,32 @@ public class UserJpaAdapter implements UserPersistencePort {
     public Optional<User> findByID(Integer id) {
 
         return repository.findById(id)
-                .map(mapper::toDomain);
-    }
-
-    @Override
-    public void saveAll(List<User> users) {
-
-        repository.saveAll(
-                users.stream()
-                        .map(mapper::toEntity)
-                        .toList()
-        );
+                .map(userMapper::toDomain);
     }
 
     @Override
     public void remove(User user) {
 
         repository.delete(
-                mapper.toEntity(user)
+                userMapper.toEntity(user)
         );
     }
 
     @Override
     public Optional<User> save(User user) {
 
+        var userEntity = userMapper.toEntity(user);
+        if (CollectionUtils.isNotEmpty(user.getTasks())) {
+            var userTasks = user.getTasks()
+                    .stream()
+                    .map(taskEntityMapper::toEntity)
+                    .collect(Collectors.toSet());
+            userEntity.setTasks(userTasks);
+        }
         return Optional.of(
-                mapper.toDomain(
+                userMapper.toDomain(
                         repository.save(
-                                mapper.toEntity(user)
+                                userEntity
                         )
                 )
         );

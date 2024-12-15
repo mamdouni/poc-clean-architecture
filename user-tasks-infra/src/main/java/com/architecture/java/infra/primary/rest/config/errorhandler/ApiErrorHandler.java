@@ -1,5 +1,6 @@
 package com.architecture.java.infra.primary.rest.config.errorhandler;
 
+import com.architecture.java.business.domain.exceptions.BadRequestException;
 import com.architecture.java.business.domain.exceptions.ResourceNotFoundException;
 import lombok.Getter;
 import lombok.NonNull;
@@ -20,7 +21,14 @@ public class ApiErrorHandler {
     @ExceptionHandler({ResourceNotFoundException.class, NoResourceFoundException.class})
     public ErrorResponse handleNotFoundResource(@NonNull ResourceNotFoundException ex) {
 
-        return buildError(HttpStatus.NOT_FOUND.getReasonPhrase(), ex.getMessagesEnum().getMessage());
+        return buildError(HttpStatus.NOT_FOUND.getReasonPhrase(), ex.getMessage());
+    }
+
+    @ExceptionHandler(value = { BadRequestException.class })
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorResponse handleBadRequestException(BadRequestException ex) {
+
+        return buildError(HttpStatus.BAD_REQUEST.getReasonPhrase(), ex.getMessage());
     }
 
     private ErrorResponse buildError(String message, Serializable details) {

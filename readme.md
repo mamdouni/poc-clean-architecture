@@ -41,7 +41,7 @@ Then, you can choose the **LOCAL** environment variables :
 ### Using a collection
 
 You can also use this bruno exported collection to test the API :
-- [poc-hexa-archi-bruno-workspace.json](src/main/resources/bruno/poc-hexa-archi-bruno-workspace.json)
+- [poc-hexa-archi-bruno-workspace.json](user-tasks-container/src/main/resources/bruno/poc-hexa-archi-bruno-workspace.json)
 
 You have also to create and configure this **LOCAL** environment variables in Bruno :
 - ![bruno-local-env.png](images/bruno-local-env.png)

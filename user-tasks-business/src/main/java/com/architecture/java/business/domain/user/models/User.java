@@ -5,7 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
-import java.util.Set;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,13 +19,13 @@ public class User {
 
     private String email;
 
-    private Set<Task> tasks;
+    private List<Task> tasks;
 
-    public void addTask(Task taskEntity) {
-        this.tasks.add(taskEntity);
+    public void addTask(Task task) {
+        this.tasks.add(task);
     }
 
-    public void removeTask(Task taskEntity) {
-        this.tasks.remove(taskEntity);
+    public void removeTask(Task task) {
+        this.tasks.remove(task);
     }
 }

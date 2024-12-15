@@ -11,8 +11,6 @@ public interface UserPersistencePort {
 
     Optional<User> findByID(Integer id);
 
-    void saveAll(List<User> users);
-
     void remove(User user);
 
     Optional<User> save(User user);

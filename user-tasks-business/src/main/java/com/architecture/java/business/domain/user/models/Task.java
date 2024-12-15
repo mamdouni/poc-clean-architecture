@@ -1,16 +1,12 @@
 package com.architecture.java.business.domain.user.models;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
+@Data
 @Accessors(chain = true)
-@ToString
 public class Task {
 
     private Integer id;
