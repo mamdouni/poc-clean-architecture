@@ -1,10 +1,10 @@
-package com.architecture.java.cleanarchi.services;
+package com.architecture.java.hexa.services;
 
-import com.architecture.java.cleanarchi.entities.TaskEntity;
-import com.architecture.java.cleanarchi.entities.UserEntity;
-import com.architecture.java.cleanarchi.exceptions.ExceptionsMessagesEnum;
-import com.architecture.java.cleanarchi.exceptions.ResourceNotFoundException;
-import com.architecture.java.cleanarchi.repositories.UserRepository;
+import com.architecture.java.hexa.entities.TaskEntity;
+import com.architecture.java.hexa.entities.UserEntity;
+import com.architecture.java.hexa.exceptions.ExceptionsMessagesEnum;
+import com.architecture.java.hexa.exceptions.ResourceNotFoundException;
+import com.architecture.java.hexa.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,10 +1,10 @@
-package com.architecture.java.cleanarchi;
+package com.architecture.java.hexa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PocCleanArchitectureApplicationTests {
+class PocHexaArchitectureApplicationTests {
 
 	@Test
 	void contextLoads() {

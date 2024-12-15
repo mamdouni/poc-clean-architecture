@@ -1,6 +1,6 @@
-package com.architecture.java.cleanarchi.services;
+package com.architecture.java.hexa.services;
 
-import com.architecture.java.cleanarchi.repositories.TaskRepository;
+import com.architecture.java.hexa.repositories.TaskRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

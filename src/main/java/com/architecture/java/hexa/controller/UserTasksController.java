@@ -1,12 +1,12 @@
-package com.architecture.java.cleanarchi.controller;
+package com.architecture.java.hexa.controller;
 
-import com.architecture.java.cleanarchi.controller.dtos.TaskDTO;
-import com.architecture.java.cleanarchi.controller.mappers.TaskMapper;
-import com.architecture.java.cleanarchi.controller.mappers.UserMapper;
-import com.architecture.java.cleanarchi.entities.UserEntity;
-import com.architecture.java.cleanarchi.exceptions.ExceptionsMessagesEnum;
-import com.architecture.java.cleanarchi.exceptions.ResourceNotFoundException;
-import com.architecture.java.cleanarchi.services.UserService;
+import com.architecture.java.hexa.controller.dtos.TaskDTO;
+import com.architecture.java.hexa.controller.mappers.TaskMapper;
+import com.architecture.java.hexa.controller.mappers.UserMapper;
+import com.architecture.java.hexa.entities.UserEntity;
+import com.architecture.java.hexa.exceptions.ExceptionsMessagesEnum;
+import com.architecture.java.hexa.exceptions.ResourceNotFoundException;
+import com.architecture.java.hexa.services.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

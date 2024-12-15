@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>com.architecture.java</groupId>
-	<artifactId>poc-clean-architecture</artifactId>
+	<artifactId>poc-hexa-architecture</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>poc-clean-architecture</name>
+	<name>poc-hexa-architecture</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
