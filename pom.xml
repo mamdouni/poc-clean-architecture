@@ -16,9 +16,9 @@
     <name>poc-hexa-architecture</name>
     <description>Demo project for Hexagonal Architecture</description>
     <modules>
-        <module>user-tasks-container</module>
-        <module>user-tasks-business</module>
-        <module>user-tasks-infra</module>
+
+        <module>user-tasks</module>
+
     </modules>
 
     <properties>
@@ -54,21 +54,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.architecture.java</groupId>
-                <artifactId>user-tasks-business</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.architecture.java</groupId>
-                <artifactId>user-tasks-container</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.architecture.java</groupId>
-                <artifactId>user-tasks-infra</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
