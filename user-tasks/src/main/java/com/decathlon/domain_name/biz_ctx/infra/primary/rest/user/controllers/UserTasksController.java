@@ -14,7 +14,7 @@ import static org.springframework.http.HttpStatus.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/users/{userId}/tasks")
-public class UserTasksController {
+class UserTasksController {
 
     private final DisplayUsersUseCases displayUsersUseCases;
     private final ManageUserTasksUseCase manageUserTasksUseCase;

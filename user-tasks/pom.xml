@@ -11,6 +11,11 @@
 
     <artifactId>user-tasks-app</artifactId>
 
+    <properties>
+        <archunit-junit5.version>1.3.0</archunit-junit5.version>
+    </properties>
+
+
     <!-- TODO Only basic cdi annotations are permitted here, like @Service or @Component -->
     <dependencies>
         <dependency>
@@ -38,6 +43,17 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit-junit5-api</artifactId>
+            <version>${archunit-junit5.version}</version>
         </dependency>
     </dependencies>
 

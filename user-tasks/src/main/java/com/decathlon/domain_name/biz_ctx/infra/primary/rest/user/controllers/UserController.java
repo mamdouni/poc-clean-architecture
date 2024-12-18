@@ -15,7 +15,7 @@ import static org.springframework.http.HttpStatus.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/users")
-public class UserController {
+class UserController {
 
     private final DisplayUsersUseCases displayUsersUseCases;
     private final CreateUserUseCase createUserUseCase;

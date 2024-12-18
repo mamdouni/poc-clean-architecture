@@ -1,4 +1,4 @@
-package com.decathlon.domain_name.biz_ctx.infra.config;
+package com.decathlon.domain_name.technical.config;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.context.annotation.Configuration;

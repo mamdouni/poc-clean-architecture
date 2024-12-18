@@ -9,7 +9,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 @RequestMapping("/ping")
-public class PingController {
+class PingController {
 
     @GetMapping
     @ResponseStatus(OK)
